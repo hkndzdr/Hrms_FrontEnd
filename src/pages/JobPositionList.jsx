@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Table, Header, Icon, Button } from "semantic-ui-react";
+import { Table, Header, Icon } from "semantic-ui-react";
 import JobPositionService from "../services/jobPositionService";
 
 export default function JobPositionList() {
@@ -13,10 +13,10 @@ export default function JobPositionList() {
   return (
     <div>
       <Header as="h3">
-        <Icon name="affiliatetheme"/>
+        <Icon name="caret square down"/>
         <Header.Content>İş Pozisyonu Listesi</Header.Content>
       </Header>
-      <Table color="yellow" key="yellow">
+      <Table color="grey" key="grey">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Pozisyon Adı</Table.HeaderCell>

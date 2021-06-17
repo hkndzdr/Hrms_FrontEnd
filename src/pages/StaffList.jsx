@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { Table, Header, Icon, Button } from "semantic-ui-react";
+import { Table, Header, Icon } from "semantic-ui-react";
 import StaffService from "../services/staffService";
 
-export default function StaffList() {
+export default function EmployeeList() {
   const [staffs, setStaffs] = useState([]);
 
   useEffect(() => {
     let staffService = new StaffService();
-    staffService.getStaffs().then((result) => setStaffs(result.data.data));
-  });
+    staffService
+      .getStaffs()
+      .then((result) => setStaffs(result.data.data));
+  }, []);
 
   return (
     <div>
       <Header as="h3">
-        <Icon name="affiliatetheme"/>
-        <Header.Content>İK Personel Listesi</Header.Content>
+        <Icon name="list alternate outline" />
+        <Header.Content>Hrms Personel Listesi</Header.Content>
       </Header>
-      <Table color="yellow" key="yellow">
+      <Table color="violet" key="violet">
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>First Name</Table.HeaderCell>
-            <Table.HeaderCell>Last Name</Table.HeaderCell>
+            <Table.HeaderCell>Adı</Table.HeaderCell>
+            <Table.HeaderCell>Soyadı</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
